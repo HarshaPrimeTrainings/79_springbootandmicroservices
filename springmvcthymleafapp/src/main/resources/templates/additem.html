@@ -1,0 +1,8 @@
+<h1>ADD ITEMS TO INVENTORY</h1>
+
+<form method="post" action="/save" th:object="${item}">
+<input type="hidden" name="id" th:field="*{id}" value="${id}" readonly="readonly"> </br>
+NAME: <input type="text" name="ItemName" th:field="*{ItemName}" value="${ItemName}"> </br>
+PRICE: <input type="text" name="price" th:field="*{price}" value="${price}"> </br>
+<input type="submit">
+</form>

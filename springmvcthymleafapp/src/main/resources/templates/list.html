@@ -1,0 +1,23 @@
+<h1>Items List</h1>
+<style>
+table,tr,td,th{
+border: solid 1px;
+}
+
+</style>
+<button><a href="/addform">ADD ITEM</a></button>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>NAME</th>
+		<th>PRICE</th>
+	</tr>
+	<tr th:each="item:${items}">
+		<td th:text="${item.id}"></td>
+		<td th:text="${item.ItemName}"></td>
+		<td th:text=" ${item.price}"></td>
+		<td><button><a th:href="@{'/update/'+${item.id}}">EDIT</a></button></td>
+		<td><button><a th:href="@{'/delete/'+${item.id}}">DELETE</a></button></td>
+	</tr>
+</table>
