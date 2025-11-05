@@ -1,6 +1,7 @@
 package com.training.springmvcthymleafapp.controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
@@ -32,6 +33,7 @@ public class InvetntoryController {
 	
 	@RequestMapping("/list")
 	public ModelAndView itemList() {
+		
 		if(itemList.isEmpty()) {
 			initList();
 		}
@@ -56,25 +58,23 @@ public class InvetntoryController {
 	
 	@RequestMapping(value = "/save",method = RequestMethod.POST)
 	public ModelAndView saveItem(@ModelAttribute("item") Item model,BindingResult bindingResult) {
+		
+		Set<Integer> iid = updateEid();
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("list");
 		mav.addObject("items", itemList);
 		Item exitingItem = itemList.stream().filter(item->item.getId() == model.getId())
 				.findFirst().orElse(null);
-		
-		int expectednum = 1;
-		
-		if(exitingItem==null) {
-			Set<Integer> iid = updateEid();
-			
-			int epectedId = itemList.size();
-			for (int i=0;i<iid.size();i++) {
-				if(!iid.contains(i+1)) {
-					expectednum = i+1;
-				};
-			}
-			
-			itemList.add(new Item(expectednum,model.getItemName(),model.getPrice()));
+		if (exitingItem == null) {
+		    int expectednum = 1; // start with 1
+
+		    for (int i = 1; i <= iid.size() + 1; i++) {
+		        if (!iid.contains(i)) {
+		            expectednum = i;
+		            break;
+		        }
+		    }
+		    itemList.add(new Item(expectednum, model.getItemName(), model.getPrice()));
 		}
 		else {
 			exitingItem.setItemName(model.getItemName());
