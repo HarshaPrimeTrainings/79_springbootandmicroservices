@@ -66,8 +66,7 @@ public class InvetntoryController {
 		Item exitingItem = itemList.stream().filter(item->item.getId() == model.getId())
 				.findFirst().orElse(null);
 		if (exitingItem == null) {
-		    int expectednum = 1; // start with 1
-
+		    int expectednum = 1;
 		    for (int i = 1; i <= iid.size() + 1; i++) {
 		        if (!iid.contains(i)) {
 		            expectednum = i;
