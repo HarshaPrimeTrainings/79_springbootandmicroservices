@@ -1,5 +1,7 @@
 package com.training.userservice.dao;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class User {
 
 	private Integer uid;
@@ -7,12 +9,16 @@ public class User {
 	private String address;
 	private String contact;
 	
-	public User(Integer uid, String name, String address, String contact) {
+	@JsonIgnore
+	private String password;
+
+	public User(Integer uid, String name, String address, String contact, String password) {
 		super();
 		this.uid = uid;
 		this.name = name;
 		this.address = address;
 		this.contact = contact;
+		this.password = password;
 	}
 
 	public Integer getUid() {
@@ -46,6 +52,21 @@ public class User {
 	public void setContact(String contact) {
 		this.contact = contact;
 	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@Override
+	public String toString() {
+		return "User [uid=" + uid + ", name=" + name + ", address=" + address + ", contact=" + contact + ", password="
+				+ password + "]";
+	}
+	
 	
 	
 	
