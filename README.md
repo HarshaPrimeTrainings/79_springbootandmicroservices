@@ -3,12 +3,12 @@
 # payload for user with associations.
 ```
 {
-    "name": "rechael",
-    "contact": "rachel@gmail.com",
+    "name": "vivek",
+    "contact": "vivek@gmail.com",
     "address": {
-        "city": "NYC",
-        "state": "ILLI",
-        "zip": 7778899
+        "city": "HYD",
+        "state": "TG",
+        "zip": 50081
     },
     "hobbie": [
         {
