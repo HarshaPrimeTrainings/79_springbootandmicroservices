@@ -1,0 +1,30 @@
+<style>
+body{
+background-color:#e2dada; 
+}
+
+#login-form-wrap{
+    text-align: center;
+    background-color: white;
+    width: 50%;
+    height: 200px;
+    padding: 20px 0px 20px 0px;
+    margin: auto;
+}
+#error{
+color: red
+}
+#logout{
+color: green;
+}
+</style>
+<div id="login-form-wrap">
+<h1>Login to Acces Spring Security Demo</h1>
+<div th:if="${param.error}" id="error">username/password not matched</div>
+<div th:if="${param.logout}" id="logout">Logged Out Succesfully</div>
+<form method="post" action="/login">
+<p><input type="text" name="username"></p>
+<p><input type="password" name="password"></p>
+<input type="submit">
+</form>
+</div>
