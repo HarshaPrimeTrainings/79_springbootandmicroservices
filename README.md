@@ -64,8 +64,8 @@ Get zipkin-server-2.12.9-exec.jar
 2. Create a New Client
 	- Enter the Client ID, then click Next.
 	- In the Third/Last Tab:
-	- Set the Root URL to your Spring Boot application's URL (e.g., http://localhost:7070).
-	- Set the Valid Redirect URIs to your application's URL with a wildcard (e.g., http://localhost:7070/*).
+	- Set the Root URL to your Spring Boot application's URL (e.g., http://localhost:9090).
+	- Set the Valid Redirect URIs to your application's URL with a wildcard (e.g., http://localhost:9090/*).
 	- Click Save.
 	- Now, select the Client ID you just created.
 	- Go to the Roles tab, create roles, and save them.
