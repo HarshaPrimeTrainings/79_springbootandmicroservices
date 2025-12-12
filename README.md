@@ -118,4 +118,8 @@ Check the credentials. If still the error persists then follow below steps:
 # Token Generation With KEYCLOAK
 ![KEYCLOAK Token Generation ](https://github.com/HarshaPrimeTrainings/64_spring_boot_microservice_cloud_security/blob/main/keycloaktoken.JPG)
 # Testing API with KEYCLOAK Token
-![KEYCLOAK Token Testing ](https://github.com/HarshaPrimeTrainings/64_spring_boot_microservice_cloud_security/blob/main/product.JPG)
+- User ACCESS
+![KEYCLOAK Token Testing ](https://github.com/HarshaPrimeTrainings/79_springbootandmicroservices/blob/main/useracces.PNG)
+
+- Admin ACCESS
+![KEYCLOAK Token Testing ](https://github.com/HarshaPrimeTrainings/79_springbootandmicroservices/blob/main/adminacces.PNG)
